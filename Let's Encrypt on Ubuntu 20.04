@@ -1,0 +1,15 @@
+##This guideline works for Linux, Apache 
+Step 1 — Installing Certbot
+  sudo apt install certbot python3-certbot-apache
+  
+Step 2 — Checking your Apache Virtual Host Configuration
+  sudo nano /etc/apache2/sites-available/your_domain.conf
+  
+Step 3 — Allowing HTTPS Through the Firewall
+  sudo ufw allow 'Apache Full'
+  sudo ufw delete allow 'Apache'
+  
+in case your firewall inactive you need to activate it (sudo ufw enable )
+
+Step 4 — Obtaining an SSL Certificate
+  sudo certbot --apache
